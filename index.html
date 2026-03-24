@@ -17,11 +17,9 @@
     --text-muted: #888;
     --accent: #c8a96e;
   }
-
+ 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--black);
     color: var(--white);
@@ -30,7 +28,7 @@
     line-height: 1.6;
     overflow-x: hidden;
   }
-
+ 
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -40,581 +38,152 @@
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(212,168,67,0.15);
   }
-
-  .logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.4rem;
-    letter-spacing: -0.02em;
-    color: var(--white);
-  }
-
+  .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; color: var(--white); }
   .logo span { color: var(--gold); }
-
   nav ul { display: flex; gap: 2.5rem; list-style: none; }
   nav ul a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
   nav ul a:hover { color: var(--white); }
-
+ 
   .btn {
     display: inline-flex; align-items: center; gap: 0.5rem;
     padding: 0.75rem 1.75rem;
-    background: var(--gold);
-    color: var(--black);
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.02em;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.2s;
+    background: var(--gold); color: var(--black);
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.9rem;
+    letter-spacing: 0.02em; border: none; border-radius: 4px;
+    cursor: pointer; text-decoration: none; transition: all 0.2s;
   }
-
   .btn:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-  .btn-outline {
-    background: transparent;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-  }
-
+  .btn-outline { background: transparent; border: 1px solid var(--gold); color: var(--gold); }
   .btn-outline:hover { background: var(--gold); color: var(--black); }
-
+ 
   /* HERO */
   .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 8rem 4rem 4rem;
-    position: relative;
-    overflow: hidden;
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 8rem 4rem 4rem; position: relative; overflow: hidden;
   }
-
-  .hero-bg {
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(212,168,67,0.08) 0%, transparent 70%);
-  }
-
+  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(212,168,67,0.08) 0%, transparent 70%); }
   .hero-grid {
     position: absolute; inset: 0;
-    background-image: linear-gradient(rgba(212,168,67,0.03) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(212,168,67,0.03) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(212,168,67,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(212,168,67,0.03) 1px, transparent 1px);
     background-size: 60px 60px;
   }
-
   .hero-content { position: relative; max-width: 620px; }
-
   .hero-badge {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.4rem 1rem;
-    background: rgba(212,168,67,0.1);
-    border: 1px solid rgba(212,168,67,0.3);
-    border-radius: 100px;
-    font-size: 0.8rem;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 2rem;
+    padding: 0.4rem 1rem; background: rgba(212,168,67,0.1);
+    border: 1px solid rgba(212,168,67,0.3); border-radius: 100px;
+    font-size: 0.8rem; color: var(--gold); font-weight: 500; margin-bottom: 2rem;
   }
-
-  .hero-badge::before {
-    content: '';
-    width: 6px; height: 6px;
-    background: var(--gold);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  h1 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    margin-bottom: 1.5rem;
-  }
-
-  h1 em {
-    font-style: normal;
-    color: var(--gold);
-    position: relative;
-  }
-
-  .hero-desc {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    max-width: 480px;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-    line-height: 1.7;
-  }
-
+  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.8rem, 5vw, 4.5rem); line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
+  h1 em { font-style: normal; color: var(--gold); }
+  .hero-desc { font-size: 1.1rem; color: var(--text-muted); max-width: 480px; margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7; }
   .hero-cta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
-
-  .hero-proof {
-    margin-top: 3rem;
-    display: flex; align-items: center; gap: 1rem;
-    font-size: 0.85rem; color: var(--text-muted);
-  }
-
-  .avatars {
-    display: flex;
-  }
-
-  .avatars span {
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    border: 2px solid var(--black);
-    background: var(--gray-mid);
-    margin-left: -8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.7rem;
-    overflow: hidden;
-  }
-
+  .hero-proof { margin-top: 3rem; display: flex; align-items: center; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); }
+  .avatars { display: flex; }
+  .avatars span { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--black); background: var(--gray-mid); margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; }
   .avatars span:first-child { margin-left: 0; }
-
+ 
   /* HERO IMAGES */
-  .hero-images {
-    position: absolute;
-    right: 0; top: 0; bottom: 0;
-    width: 48%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    padding: 8rem 4rem 4rem 2rem;
-    overflow: hidden;
-  }
-
-  .hero-img-card {
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-    background: var(--gray);
-    animation: float 6s ease-in-out infinite;
-  }
-
+  .hero-images { position: absolute; right: 0; top: 0; bottom: 0; width: 48%; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 8rem 4rem 4rem 2rem; overflow: hidden; }
+  .hero-img-card { border-radius: 12px; overflow: hidden; position: relative; background: var(--gray); animation: float 6s ease-in-out infinite; }
   .hero-img-card:nth-child(2) { animation-delay: -2s; margin-top: 40px; }
   .hero-img-card:nth-child(3) { animation-delay: -4s; }
   .hero-img-card:nth-child(4) { animation-delay: -1s; margin-top: 40px; }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-
-  .hero-img-card .img-placeholder {
-    width: 100%; padding-bottom: 130%;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .img-placeholder-inner {
-    position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 3rem;
-  }
-
-  .card-label {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    padding: 1rem 0.75rem 0.75rem;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  .hero-img-card .img-placeholder { width: 100%; padding-bottom: 130%; position: relative; overflow: hidden; }
+  .img-placeholder-inner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+  .card-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem 0.75rem 0.75rem; background: linear-gradient(transparent, rgba(0,0,0,0.8)); font-size: 0.75rem; font-weight: 500; }
+ 
   /* SECTION */
   section { padding: 6rem 4rem; }
-  .section-label {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-
-  h2 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
-  }
-
+  .section-label { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; margin-bottom: 1rem; }
+  h2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+ 
   /* HOW IT WORKS */
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .step-card {
-    padding: 2rem;
-    background: var(--gray);
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.3s;
-  }
-
+  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
+  .step-card { padding: 2rem; background: var(--gray); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: border-color 0.3s; }
   .step-card:hover { border-color: rgba(212,168,67,0.3); }
-
-  .step-number {
-    font-family: 'Syne', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: rgba(212,168,67,0.1);
-    line-height: 1;
-    margin-bottom: 1rem;
-  }
-
+  .step-number { font-family: 'Syne', sans-serif; font-size: 3.5rem; font-weight: 800; color: rgba(212,168,67,0.1); line-height: 1; margin-bottom: 1rem; }
   .step-icon { font-size: 1.8rem; margin-bottom: 1rem; }
-
-  .step-card h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-
+  .step-card h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
   .step-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
-
+ 
   /* GALLERY */
   .gallery { background: var(--gray); }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin-top: 3rem;
-  }
-
-  .template-card {
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-    background: var(--gray-mid);
-    transition: transform 0.3s;
-  }
-
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 3rem; }
+  .template-card { border-radius: 12px; overflow: hidden; cursor: pointer; background: var(--gray-mid); transition: transform 0.3s; }
   .template-card:hover { transform: scale(1.02); }
-
   .template-card:hover .template-overlay { opacity: 1; }
-
-  .template-img {
-    padding-bottom: 125%;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .template-emoji {
-    position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 4rem;
-    background: linear-gradient(135deg, var(--gray-mid), #333);
-  }
-
-  .template-overlay {
-    position: absolute; inset: 0;
-    background: rgba(0,0,0,0.7);
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 0.75rem;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .template-name {
-    padding: 0.75rem 1rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    background: rgba(0,0,0,0.6);
-    text-align: center;
-  }
-
+  .template-img { padding-bottom: 125%; position: relative; overflow: hidden; }
+  .template-emoji { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 4rem; background: linear-gradient(135deg, var(--gray-mid), #333); }
+  .template-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.7); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; opacity: 0; transition: opacity 0.3s; }
+  .template-name { padding: 0.75rem 1rem; font-size: 0.85rem; font-weight: 500; background: rgba(0,0,0,0.6); text-align: center; }
+ 
   /* UPLOAD SECTION */
   #create { background: var(--black); }
-
-  .create-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-top: 3rem;
-    align-items: start;
-  }
-
-  .upload-zone {
-    border: 2px dashed rgba(212,168,67,0.3);
-    border-radius: 16px;
-    padding: 3rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s;
-    background: rgba(212,168,67,0.02);
-  }
-
-  .upload-zone:hover, .upload-zone.dragover {
-    border-color: var(--gold);
-    background: rgba(212,168,67,0.05);
-  }
-
+  .create-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; align-items: start; }
+  .upload-zone { border: 2px dashed rgba(212,168,67,0.3); border-radius: 16px; padding: 3rem; text-align: center; cursor: pointer; transition: all 0.3s; background: rgba(212,168,67,0.02); }
+  .upload-zone:hover, .upload-zone.dragover { border-color: var(--gold); background: rgba(212,168,67,0.05); }
   .upload-icon { font-size: 3rem; margin-bottom: 1rem; }
   .upload-zone h3 { font-family: 'Syne', sans-serif; font-size: 1.2rem; margin-bottom: 0.5rem; }
   .upload-zone p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
-
   #fileInput { display: none; }
-
-  .preview-box {
-    border-radius: 16px;
-    overflow: hidden;
-    background: var(--gray);
-    padding: 1.5rem;
-  }
-
-  .preview-box h3 {
-    font-family: 'Syne', sans-serif;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-  }
-
-  .preview-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .preview-slot {
-    aspect-ratio: 4/5;
-    border-radius: 8px;
-    background: var(--gray-mid);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    flex-direction: column;
-    gap: 0.5rem;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .preview-slot img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    position: absolute; inset: 0;
-  }
-
-  .arrow-icon { font-size: 1.5rem; color: var(--gold); text-align: center; display: flex; align-items: center; justify-content: center; }
-
-  .progress-bar {
-    height: 4px;
-    background: var(--gray-mid);
-    border-radius: 2px;
-    overflow: hidden;
-    margin-bottom: 1rem;
-    display: none;
-  }
-
-  .progress-fill {
-    height: 100%;
-    background: var(--gold);
-    width: 0%;
-    transition: width 0.3s;
-    border-radius: 2px;
-  }
-
+  .preview-box { border-radius: 16px; overflow: hidden; background: var(--gray); padding: 1.5rem; }
+  .preview-box h3 { font-family: 'Syne', sans-serif; margin-bottom: 1rem; font-size: 1rem; }
+  .preview-images { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem; }
+  .preview-slot { aspect-ratio: 4/5; border-radius: 8px; background: var(--gray-mid); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: var(--text-muted); flex-direction: column; gap: 0.5rem; overflow: hidden; position: relative; }
+  .preview-slot img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  .progress-bar { height: 4px; background: var(--gray-mid); border-radius: 2px; overflow: hidden; margin-bottom: 1rem; display: none; }
+  .progress-fill { height: 100%; background: var(--gold); width: 0%; transition: width 0.3s; border-radius: 2px; }
+ 
   /* PRICING */
   .pricing { background: var(--gray); }
-
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .price-card {
-    padding: 2rem;
-    border-radius: 16px;
-    background: var(--black);
-    border: 1px solid rgba(255,255,255,0.07);
-    position: relative;
-    transition: all 0.3s;
-  }
-
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+  .price-card { padding: 2rem; border-radius: 16px; background: var(--black); border: 1px solid rgba(255,255,255,0.07); position: relative; transition: all 0.3s; }
   .price-card:hover { border-color: rgba(212,168,67,0.3); }
-
-  .price-card.featured {
-    border-color: var(--gold);
-    background: linear-gradient(135deg, rgba(212,168,67,0.08), rgba(0,0,0,0));
-  }
-
-  .featured-badge {
-    position: absolute;
-    top: -12px; left: 50%; transform: translateX(-50%);
-    padding: 0.25rem 1rem;
-    background: var(--gold);
-    color: var(--black);
-    font-size: 0.75rem;
-    font-weight: 700;
-    font-family: 'Syne', sans-serif;
-    border-radius: 100px;
-    white-space: nowrap;
-  }
-
+  .price-card.featured { border-color: var(--gold); background: linear-gradient(135deg, rgba(212,168,67,0.08), rgba(0,0,0,0)); }
+  .featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); padding: 0.25rem 1rem; background: var(--gold); color: var(--black); font-size: 0.75rem; font-weight: 700; font-family: 'Syne', sans-serif; border-radius: 100px; white-space: nowrap; }
   .price-plan { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 1rem; }
-
-  .price-amount {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 0.25rem;
-  }
-
+  .price-amount { font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; line-height: 1; margin-bottom: 0.25rem; }
   .price-amount span { font-size: 1rem; font-weight: 400; color: var(--text-muted); }
-
   .price-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
-
   .price-features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
-
   .price-features li { font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
-
   .price-features li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
-
   .price-features li.no::before { content: '✗'; color: var(--text-muted); }
   .price-features li.no { color: var(--text-muted); }
-
+ 
   /* TESTIMONIALS */
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3rem;
-  }
-
-  .testimonial {
-    padding: 1.75rem;
-    background: var(--gray);
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
-  }
-
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .testimonial { padding: 1.75rem; background: var(--gray); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
   .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; }
-
   .testimonial p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.25rem; font-style: italic; }
-
   .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
-
-  .author-avatar {
-    width: 36px; height: 36px; border-radius: 50%;
-    background: var(--gray-mid);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1rem;
-  }
-
+  .author-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gray-mid); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
   .author-name { font-size: 0.85rem; font-weight: 500; }
   .author-role { font-size: 0.75rem; color: var(--text-muted); }
-
+ 
   /* MODAL */
-  .modal-overlay {
-    display: none;
-    position: fixed; inset: 0; z-index: 1000;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(8px);
-    align-items: center; justify-content: center;
-  }
-
+  .modal-overlay { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); align-items: center; justify-content: center; }
   .modal-overlay.active { display: flex; }
-
-  .modal {
-    background: var(--gray);
-    border-radius: 20px;
-    border: 1px solid rgba(212,168,67,0.2);
-    padding: 2.5rem;
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-  }
-
-  .modal-close {
-    position: absolute; top: 1rem; right: 1rem;
-    background: none; border: none;
-    color: var(--text-muted); font-size: 1.5rem;
-    cursor: pointer; line-height: 1;
-  }
-
+  .modal { background: var(--gray); border-radius: 20px; border: 1px solid rgba(212,168,67,0.2); padding: 2.5rem; width: 90%; max-width: 500px; position: relative; }
+  .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer; line-height: 1; }
   .modal h3 { font-family: 'Syne', sans-serif; font-size: 1.5rem; margin-bottom: 0.5rem; }
   .modal p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
-
-  .modal-template-preview {
-    background: var(--gray-mid);
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-align: center;
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .paypal-btn {
-    width: 100%;
-    padding: 1rem;
-    background: #635bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-    transition: background 0.2s;
-    margin-top: 1rem;
-  }
-
+  .modal-template-preview { background: var(--gray-mid); border-radius: 12px; padding: 1.5rem; text-align: center; font-size: 4rem; margin-bottom: 1.5rem; }
+  .paypal-btn { width: 100%; padding: 1rem; background: #635bff; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: background 0.2s; margin-top: 1rem; }
   .paypal-btn:hover { background: #4f46e5; }
-
+ 
   /* FOOTER */
-  footer {
-    padding: 3rem 4rem;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
+  footer { padding: 3rem 4rem; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
   footer p { font-size: 0.85rem; color: var(--text-muted); }
-
+ 
   /* NOTIFICATION */
-  .notif {
-    position: fixed; bottom: 2rem; right: 2rem;
-    padding: 1rem 1.5rem;
-    background: var(--gray);
-    border: 1px solid rgba(212,168,67,0.3);
-    border-radius: 12px;
-    font-size: 0.9rem;
-    transform: translateY(100px);
-    opacity: 0;
-    transition: all 0.4s;
-    z-index: 200;
-    max-width: 300px;
-  }
-
+  .notif { position: fixed; bottom: 2rem; right: 2rem; padding: 1rem 1.5rem; background: var(--gray); border: 1px solid rgba(212,168,67,0.3); border-radius: 12px; font-size: 0.9rem; transform: translateY(100px); opacity: 0; transition: all 0.4s; z-index: 200; max-width: 300px; }
   .notif.show { transform: translateY(0); opacity: 1; }
-
+ 
   /* RESPONSIVE */
   @media (max-width: 1024px) {
     nav { padding: 1rem 2rem; }
@@ -629,7 +198,6 @@
     .testimonials-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; text-align: center; }
   }
-
   @media (max-width: 600px) {
     nav ul { display: none; }
     .steps-grid { grid-template-columns: 1fr; }
@@ -639,7 +207,7 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <div class="logo">Face<span>Forge</span></div>
@@ -650,7 +218,7 @@
   </ul>
   <a href="#create" class="btn">Créer ma photo →</a>
 </nav>
-
+ 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -664,71 +232,37 @@
       <a href="#gallery" class="btn btn-outline">Voir les templates</a>
     </div>
     <div class="hero-proof">
-      <div class="avatars">
-        <span>😊</span><span>😎</span><span>🤩</span><span>💪</span>
-      </div>
+      <div class="avatars"><span>😊</span><span>😎</span><span>🤩</span><span>💪</span></div>
       <span>+12 000 photos créées cette semaine</span>
     </div>
   </div>
   <div class="hero-images">
-    <div class="hero-img-card">
-      <div class="img-placeholder"><div class="img-placeholder-inner">🦸</div></div>
-      <div class="card-label">Superhéros</div>
-    </div>
-    <div class="hero-img-card">
-      <div class="img-placeholder"><div class="img-placeholder-inner">💼</div></div>
-      <div class="card-label">CEO Millionnaire</div>
-    </div>
-    <div class="hero-img-card">
-      <div class="img-placeholder"><div class="img-placeholder-inner">🏆</div></div>
-      <div class="card-label">Champion</div>
-    </div>
-    <div class="hero-img-card">
-      <div class="img-placeholder"><div class="img-placeholder-inner">🌴</div></div>
-      <div class="card-label">Voyageur Luxe</div>
-    </div>
+    <div class="hero-img-card"><div class="img-placeholder"><div class="img-placeholder-inner">🦸</div></div><div class="card-label">Superhéros</div></div>
+    <div class="hero-img-card"><div class="img-placeholder"><div class="img-placeholder-inner">💼</div></div><div class="card-label">CEO Millionnaire</div></div>
+    <div class="hero-img-card"><div class="img-placeholder"><div class="img-placeholder-inner">🏆</div></div><div class="card-label">Champion</div></div>
+    <div class="hero-img-card"><div class="img-placeholder"><div class="img-placeholder-inner">🌴</div></div><div class="card-label">Voyageur Luxe</div></div>
   </div>
 </section>
-
+ 
 <!-- HOW IT WORKS -->
 <section id="how">
   <div class="section-label">Processus</div>
   <h2>4 étapes, 60 secondes</h2>
   <div class="steps-grid">
-    <div class="step-card">
-      <div class="step-number">01</div>
-      <div class="step-icon">🖼️</div>
-      <h3>Choisissez un template</h3>
-      <p>Parcourez notre galerie de plus de 50 templates IA — superhéros, luxe, sport, business et plus.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-number">02</div>
-      <div class="step-icon">📸</div>
-      <h3>Uploadez votre photo</h3>
-      <p>Envoyez une photo claire de votre visage. L'IA se charge du reste — aucune compétence requise.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-number">03</div>
-      <div class="step-icon">⚡</div>
-      <h3>L'IA génère votre image</h3>
-      <p>Notre IA insère votre visage dans le template en moins de 30 secondes avec un résultat bluffant.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-number">04</div>
-      <div class="step-icon">💳</div>
-      <h3>Payez et téléchargez</h3>
-      <p>Paiement sécurisé par carte bancaire. Téléchargez votre image en haute définition et partagez-la.</p>
-    </div>
+    <div class="step-card"><div class="step-number">01</div><div class="step-icon">🖼️</div><h3>Choisissez un template</h3><p>Parcourez notre galerie de plus de 50 templates IA — superhéros, luxe, sport, business et plus.</p></div>
+    <div class="step-card"><div class="step-number">02</div><div class="step-icon">📸</div><h3>Uploadez votre photo</h3><p>Envoyez une photo claire de votre visage. L'IA se charge du reste — aucune compétence requise.</p></div>
+    <div class="step-card"><div class="step-number">03</div><div class="step-icon">⚡</div><h3>L'IA génère votre image</h3><p>Notre IA insère votre visage dans le template en moins de 30 secondes avec un résultat bluffant.</p></div>
+    <div class="step-card"><div class="step-number">04</div><div class="step-icon">💳</div><h3>Payez et téléchargez</h3><p>Paiement sécurisé par carte bancaire. Téléchargez votre image en haute définition et partagez-la.</p></div>
   </div>
 </section>
-
+ 
 <!-- GALLERY -->
 <section id="gallery" class="gallery">
   <div class="section-label">Templates</div>
   <h2>Choisissez votre univers</h2>
   <div class="gallery-grid" id="galleryGrid"></div>
 </section>
-
+ 
 <!-- CREATE -->
 <section id="create">
   <div class="section-label">Créer</div>
@@ -752,28 +286,16 @@
     <div class="preview-box">
       <h3>Aperçu</h3>
       <div class="preview-images">
-        <div class="preview-slot" id="previewOriginal">
-          <span style="font-size:1.5rem">👤</span>
-          <span>Votre photo</span>
-        </div>
-        <div class="preview-slot" id="previewResult">
-          <span style="font-size:1.5rem">✨</span>
-          <span>Résultat IA</span>
-        </div>
+        <div class="preview-slot" id="previewOriginal"><span style="font-size:1.5rem">👤</span><span>Votre photo</span></div>
+        <div class="preview-slot" id="previewResult"><span style="font-size:1.5rem">✨</span><span>Résultat IA</span></div>
       </div>
-      <div class="progress-bar" id="progressBar">
-        <div class="progress-fill" id="progressFill"></div>
-      </div>
-      <button class="btn" style="width:100%; justify-content:center;" id="generateBtn" onclick="handleGenerate()">
-        Générer mon image — 0,99€
-      </button>
-      <p style="font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:0.75rem;">
-        🔒 Paiement sécurisé Stripe · Remboursé si pas satisfait
-      </p>
+      <div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
+      <button class="btn" style="width:100%; justify-content:center;" id="generateBtn" onclick="handleGenerate()">Générer mon image — 0,99€</button>
+      <p style="font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:0.75rem;">🔒 Paiement sécurisé Stripe · Remboursé si pas satisfait</p>
     </div>
   </div>
 </section>
-
+ 
 <!-- PRICING -->
 <section id="pricing" class="pricing">
   <div class="section-label">Tarifs</div>
@@ -821,7 +343,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- TESTIMONIALS -->
 <section>
   <div class="section-label">Avis clients</div>
@@ -830,46 +352,28 @@
     <div class="testimonial">
       <div class="stars">★★★★★</div>
       <p>"J'ai utilisé FaceForge pour ma photo de profil LinkedIn en mode CEO. Mes contacts pensaient que c'était une vraie séance photo. Bluffant."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">👨</div>
-        <div>
-          <div class="author-name">Thomas M.</div>
-          <div class="author-role">Entrepreneur, Lyon</div>
-        </div>
-      </div>
+      <div class="testimonial-author"><div class="author-avatar">👨</div><div><div class="author-name">Thomas M.</div><div class="author-role">Entrepreneur, Lyon</div></div></div>
     </div>
     <div class="testimonial">
       <div class="stars">★★★★★</div>
       <p>"En 30 secondes j'avais mon image de superhéros pour mon profil Instagram. Mes abonnés ont adoré, +500 likes en une heure !"</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">👩</div>
-        <div>
-          <div class="author-name">Sarah K.</div>
-          <div class="author-role">Influenceuse, Paris</div>
-        </div>
-      </div>
+      <div class="testimonial-author"><div class="author-avatar">👩</div><div><div class="author-name">Sarah K.</div><div class="author-role">Influenceuse, Paris</div></div></div>
     </div>
     <div class="testimonial">
       <div class="stars">★★★★★</div>
       <p>"Super cadeau d'anniversaire pour mon frère — je lui ai fait une photo en champion de boxe. Il a adoré. Qualité vraiment impressionnante."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">🧑</div>
-        <div>
-          <div class="author-name">Karim B.</div>
-          <div class="author-role">Toulouse</div>
-        </div>
-      </div>
+      <div class="testimonial-author"><div class="author-avatar">🧑</div><div><div class="author-name">Karim B.</div><div class="author-role">Toulouse</div></div></div>
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="logo">Face<span>Forge</span></div>
   <p>© 2025 FaceForge · Devenez le héros de votre propre histoire</p>
   <p style="font-size:0.75rem;">CGV · Confidentialité · Contact</p>
 </footer>
-
+ 
 <!-- PAYMENT MODAL -->
 <div class="modal-overlay" id="paymentModal">
   <div class="modal">
@@ -878,12 +382,10 @@
     <p>Vous êtes à une étape de votre photo personnalisée IA</p>
     <div class="modal-template-preview" id="modalTemplatePreview">✨</div>
     <div style="display:flex; justify-content:space-between; margin-bottom:1rem; font-size:0.9rem;">
-      <span>Image IA personnalisée</span>
-      <strong>0,99€</strong>
+      <span>Image IA personnalisée</span><strong>0,99€</strong>
     </div>
     <div style="display:flex; justify-content:space-between; margin-bottom:1.5rem; font-size:0.85rem; color:var(--text-muted);">
-      <span>Haute résolution · Sans filigrane</span>
-      <span>TVA incluse</span>
+      <span>Haute résolution · Sans filigrane</span><span>TVA incluse</span>
     </div>
     <div id="stripe-card-element" style="padding:12px;background:#1a1a1a;border:1px solid rgba(212,168,67,0.3);border-radius:8px;margin-bottom:12px;"></div>
     <div id="stripe-errors" style="color:#ff6b6b;font-size:0.85rem;margin-bottom:8px;"></div>
@@ -895,11 +397,16 @@
     </p>
   </div>
 </div>
-
+ 
 <!-- NOTIFICATION -->
 <div class="notif" id="notif"></div>
-
+ 
+<!-- Stripe JS -->
+<script src="https://js.stripe.com/v3/"></script>
+ 
 <script>
+  const BACKEND_URL = 'https://nodejs-production-de752.up.railway.app';
+ 
   // TEMPLATES DATA
   const templates = [
     { id: 1, name: 'Superhéros Marvel', emoji: '🦸', category: 'Action', price: 0.99 },
@@ -915,10 +422,12 @@
     { id: 11, name: 'Commandant Militaire', emoji: '🎖️', category: 'Action', price: 0.99 },
     { id: 12, name: 'Rockstar', emoji: '🎸', category: 'Musique', price: 0.99 },
   ];
-
+ 
   let selectedTemplate = null;
   let uploadedPhoto = null;
-
+  let generatedImageUrl = null;
+  let stripe, cardElement;
+ 
   // RENDER GALLERY
   function renderGallery() {
     const grid = document.getElementById('galleryGrid');
@@ -935,265 +444,178 @@
       </div>
     `).join('');
   }
-
+ 
   function selectTemplate(id) {
     selectedTemplate = templates.find(t => t.id === id);
-    document.getElementById('selectedTemplate').innerHTML = `
+    const el = document.getElementById('selectedTemplate');
+    el.innerHTML = `
       <span style="font-size:1.5rem">${selectedTemplate.emoji}</span>
       <strong style="color:var(--white); margin-left:0.5rem">${selectedTemplate.name}</strong>
       <span style="color:var(--gold); margin-left:auto">${selectedTemplate.price}€</span>
     `;
-    document.getElementById('selectedTemplate').style.display = 'flex';
-    document.getElementById('selectedTemplate').style.alignItems = 'center';
+    el.style.display = 'flex';
+    el.style.alignItems = 'center';
     showNotif(`✓ Template "${selectedTemplate.name}" sélectionné !`);
     document.getElementById('create').scrollIntoView({ behavior: 'smooth' });
   }
-
+ 
   // FILE UPLOAD
   const fileInput = document.getElementById('fileInput');
   const uploadZone = document.getElementById('uploadZone');
-
+ 
   fileInput.addEventListener('change', handleFileSelect);
-
-  uploadZone.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    uploadZone.classList.add('dragover');
-  });
-
+  uploadZone.addEventListener('dragover', (e) => { e.preventDefault(); uploadZone.classList.add('dragover'); });
   uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('dragover'));
-
   uploadZone.addEventListener('drop', (e) => {
     e.preventDefault();
     uploadZone.classList.remove('dragover');
     const file = e.dataTransfer.files[0];
     if (file && file.type.startsWith('image/')) processFile(file);
   });
-
+ 
   function handleFileSelect(e) {
     const file = e.target.files[0];
     if (file) processFile(file);
   }
-
+ 
   function processFile(file) {
     uploadedPhoto = file;
     const reader = new FileReader();
     reader.onload = (e) => {
-      const preview = document.getElementById('previewOriginal');
-      preview.innerHTML = `<img src="${e.target.result}" alt="Votre photo">`;
+      document.getElementById('previewOriginal').innerHTML = `<img src="${e.target.result}" alt="Votre photo">`;
       showNotif('✓ Photo uploadée avec succès !');
     };
     reader.readAsDataURL(file);
   }
-
+ 
   // GENERATE
   function handleGenerate() {
-    if (!uploadedPhoto) {
-      showNotif('⚠️ Uploadez d\'abord votre photo !');
-      return;
-    }
-    if (!selectedTemplate) {
-      showNotif('⚠️ Choisissez un template dans la galerie !');
-      return;
-    }
+    if (!uploadedPhoto) { showNotif('⚠️ Uploadez d\'abord votre photo !'); return; }
+    if (!selectedTemplate) { showNotif('⚠️ Choisissez un template dans la galerie !'); return; }
     openPaymentModal();
   }
-
+ 
   // PAYMENT MODAL
   function openPaymentModal() {
     const preview = document.getElementById('modalTemplatePreview');
     if (selectedTemplate) preview.textContent = selectedTemplate.emoji;
     document.getElementById('paymentModal').classList.add('active');
   }
-
+ 
   function closeModal() {
     document.getElementById('paymentModal').classList.remove('active');
   }
-
-  function simulatePayment() {
-    closeModal();
-    // SIMULER LA GÉNÉRATION
-    const progressBar = document.getElementById('progressBar');
-    const progressFill = document.getElementById('progressFill');
-    const resultSlot = document.getElementById('previewResult');
-
-    progressBar.style.display = 'block';
-    let progress = 0;
-
-    showNotif('⚡ Génération en cours...');
-
-    const interval = setInterval(() => {
-      progress += Math.random() * 15;
-      if (progress >= 100) {
-        progress = 100;
-        clearInterval(interval);
-        progressBar.style.display = 'none';
-        resultSlot.innerHTML = `
-          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a1a,#2d2d2d)">
-            <span style="font-size:3rem">${selectedTemplate ? selectedTemplate.emoji : '✨'}</span>
-            <span style="font-size:0.7rem;color:var(--gold);margin-top:0.5rem">Image générée !</span>
-          </div>`;
-        showDownloadNotif();
-      }
-      progressFill.style.width = progress + '%';
-    }, 300);
-  }
-
-  function showDownloadNotif() {
-    const notif = document.getElementById('notif');
-    notif.innerHTML = `
-      ✅ Votre image est prête !
-      <br><br>
-      <button class="btn" style="width:100%;justify-content:center;margin-top:0.5rem" onclick="downloadImage()">
-        Télécharger en HD
-      </button>
-    `;
-    notif.classList.add('show');
-  }
-
-  function downloadImage() {
-    showNotif('📥 Téléchargement démarré !');
-  }
-
-  function showNotif(msg) {
-    const notif = document.getElementById('notif');
-    notif.innerHTML = msg;
-    notif.classList.add('show');
-    setTimeout(() => notif.classList.remove('show'), 3000);
-  }
-
-  // CLOSE MODAL ON OVERLAY CLICK
+ 
   document.getElementById('paymentModal').addEventListener('click', function(e) {
     if (e.target === this) closeModal();
   });
-
-  // INIT
-  renderGallery();
-
-  // STRIPE INTEGRATION
-  let stripe, cardElement;
-
+ 
+  // STRIPE INIT
   function initStripe() {
     stripe = Stripe('pk_test_51MpDIeHttDYTveiWhIGfnXwIYQFam2Db8nRZVXrdIqQoiYZDt62xunV9uDit1khR5vXzOJM6kcKdhkLm9T3oSiLh00K4dlcB3l');
     const elements = stripe.elements({
-      appearance: {
-        theme: 'night',
-        variables: { colorPrimary: '#d4a843', fontFamily: 'DM Sans, sans-serif' }
-      }
+      appearance: { theme: 'night', variables: { colorPrimary: '#d4a843', fontFamily: 'DM Sans, sans-serif' } }
     });
     cardElement = elements.create('card', {
-      style: {
-        base: { color: '#f5f0e8', fontSize: '16px', '::placeholder': { color: '#888' } }
-      }
+      style: { base: { color: '#f5f0e8', fontSize: '16px', '::placeholder': { color: '#888' } } }
     });
     cardElement.mount('#stripe-card-element');
     cardElement.on('change', (e) => {
       document.getElementById('stripe-errors').textContent = e.error ? e.error.message : '';
     });
   }
-
+ 
+  // STRIPE PAYMENT
   async function handleStripePayment() {
     const btn = document.getElementById('stripePayBtn');
-    btn.textContent = '⏳ Traitement...';
     btn.disabled = true;
-
+    btn.innerHTML = '<span style="font-size:1.2rem">⏳</span> Traitement...';
+ 
     try {
-      const { paymentMethod, error } = await stripe.createPaymentMethod({
-        type: 'card',
-        card: cardElement,
+      // 1. Créer le PaymentIntent côté backend
+      const res = await fetch(`${BACKEND_URL}/create-payment-intent`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
       });
-
+      const data = await res.json();
+ 
+      if (!data.clientSecret) throw new Error('Erreur serveur — pas de clientSecret');
+ 
+      // 2. Confirmer le paiement avec Stripe
+      const { error, paymentIntent } = await stripe.confirmCardPayment(data.clientSecret, {
+        payment_method: { card: cardElement }
+      });
+ 
       if (error) {
         document.getElementById('stripe-errors').textContent = error.message;
-        btn.textContent = '💳 Payer 0,99€ par carte';
         btn.disabled = false;
+        btn.innerHTML = '<span style="font-size:1.2rem">💳</span> Payer 0,99€ par carte';
         return;
       }
-
-      // Vérifier paiement avec backend
-      const paymentRes = await fetch('https://nodejs-production-de752.up.railway.app/api/verify-payment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ paymentMethodId: paymentMethod.id })
-      });
-
-      const paymentData = await paymentRes.json();
-
-      if (!paymentData.success) {
-        document.getElementById('stripe-errors').textContent = 'Paiement refusé — réessayez';
-        btn.textContent = '💳 Payer 0,99€ par carte';
-        btn.disabled = false;
-        return;
-      }
-
-      // Paiement réussi — générer l'image
+ 
+      // 3. Paiement OK — générer l'image IA
+      btn.innerHTML = '<span style="font-size:1.2rem">🎨</span> Génération en cours...';
       closeModal();
       showNotif('✅ Paiement reçu ! Génération IA en cours...');
       await startGeneration();
-
+ 
     } catch (err) {
-      document.getElementById('stripe-errors').textContent = 'Erreur — réessayez';
-      btn.textContent = '💳 Payer 0,99€ par carte';
+      document.getElementById('stripe-errors').textContent = 'Erreur — ' + err.message;
       btn.disabled = false;
+      btn.innerHTML = '<span style="font-size:1.2rem">💳</span> Payer 0,99€ par carte';
     }
   }
-
+ 
+  // GÉNÉRATION IA
   async function startGeneration() {
     const progressBar = document.getElementById('progressBar');
     const progressFill = document.getElementById('progressFill');
     const resultSlot = document.getElementById('previewResult');
-
+ 
     progressBar.style.display = 'block';
-
-    // Animation de progression pendant la génération IA
     let progress = 0;
     const progressInterval = setInterval(() => {
-      if (progress < 90) {
-        progress += Math.random() * 8;
-        progressFill.style.width = Math.min(progress, 90) + '%';
-      }
+      if (progress < 85) { progress += Math.random() * 8; progressFill.style.width = Math.min(progress, 85) + '%'; }
     }, 500);
-
+ 
     try {
-      // Envoyer photo au backend pour génération IA
       const formData = new FormData();
       formData.append('photo', uploadedPhoto);
-      formData.append('templateEmoji', selectedTemplate ? selectedTemplate.emoji : '✨');
-
-      const response = await fetch('https://nodejs-production-de752.up.railway.app/api/generate', {
+      formData.append('templateName', selectedTemplate ? selectedTemplate.name : 'hero');
+ 
+      const response = await fetch(`${BACKEND_URL}/generate`, {
         method: 'POST',
         body: formData
       });
-
-      const data = await response.json();
-
+ 
+      const genData = await response.json();
       clearInterval(progressInterval);
       progressFill.style.width = '100%';
-
+ 
       setTimeout(() => {
         progressBar.style.display = 'none';
-
-        if (data.success && data.imageUrl) {
-          resultSlot.innerHTML = `<img src="${data.imageUrl}" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">`;
-          generatedImageUrl = data.imageUrl;
+        if (genData.imageUrl) {
+          resultSlot.innerHTML = `<img src="${genData.imageUrl}" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">`;
+          generatedImageUrl = genData.imageUrl;
         } else {
-          resultSlot.innerHTML = `
-            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a1a,#2d2d2d)">
-              <span style="font-size:3rem">${selectedTemplate ? selectedTemplate.emoji : '✨'}</span>
-              <span style="font-size:0.7rem;color:var(--gold);margin-top:0.5rem">Image générée !</span>
-            </div>`;
+          resultSlot.innerHTML = `<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a1a,#2d2d2d)"><span style="font-size:3rem">${selectedTemplate ? selectedTemplate.emoji : '✨'}</span><span style="font-size:0.7rem;color:var(--gold);margin-top:0.5rem">Image générée !</span></div>`;
         }
         showDownloadNotif();
       }, 500);
-
+ 
     } catch (err) {
       clearInterval(progressInterval);
       progressBar.style.display = 'none';
       showNotif('❌ Erreur génération — réessayez');
     }
   }
-
-  let generatedImageUrl = null;
-
+ 
+  function showDownloadNotif() {
+    const notif = document.getElementById('notif');
+    notif.innerHTML = `✅ Votre image est prête !<br><br><button class="btn" style="width:100%;justify-content:center;margin-top:0.5rem" onclick="downloadImage()">Télécharger en HD</button>`;
+    notif.classList.add('show');
+  }
+ 
   function downloadImage() {
     if (generatedImageUrl) {
       const a = document.createElement('a');
@@ -1203,42 +625,23 @@
     }
     showNotif('📥 Téléchargement démarré !');
   }
-
-</script>
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-  // Init Stripe when modal opens
+ 
+  function showNotif(msg) {
+    const notif = document.getElementById('notif');
+    notif.innerHTML = msg;
+    notif.classList.add('show');
+    setTimeout(() => notif.classList.remove('show'), 3000);
+  }
+ 
+  // INIT
+  renderGallery();
   document.addEventListener('DOMContentLoaded', function() {
     setTimeout(initStripe, 500);
   });
-</script>async function testIA(prompt) {
-const response = await fetch('/api/generate', {
-method: 'POST',
-headers: { 'Content-Type': 'application/json' },
-body: JSON.stringify({ prompt })
-});
-const data = await response.json();
-console.log(data.image);
-}
-
-// Relier le bouton au test
-document.querySelector('#testButton').addEventListener('click', () => {
-testIA('Un chat jouant du piano');
-});
-<body>
-<h1>Bienvenue sur mon site IA</h1>
-
-<!-- Bouton pour tester le générateur -->
-<button id="testButton">Test IA</button>
-
-<!-- On va charger le script après le bouton -->
-<script src="app.js"></script>
+  // Si DOMContentLoaded déjà passé
+  if (document.readyState === 'complete') setTimeout(initStripe, 500);
+</script>
+ 
 </body>
-
-</html><!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<title>Mon site IA</title>
-</head>
+</html>
 

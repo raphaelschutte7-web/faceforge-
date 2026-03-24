@@ -1,79 +1,54 @@
 const express = require('express');
+const Stripe = require('stripe');
+const Replicate = require('replicate');
 const cors = require('cors');
 const multer = require('multer');
-const Replicate = require('replicate');
-require('dotenv').config();
-// Import du générateur Replay
-const { generateImage } = require('./generator/replayGenerator');
-const app = express();
+
+const server = express();
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+const replicate = new Replicate({ auth: process.env.REPLICATE_API_TOKEN });
 const upload = multer({ storage: multer.memoryStorage() });
 
-app.use(cors());
-app.use(express.json());
-app.use(express.static('../'));
+server.use(cors());
+server.use(express.json());
 
-const replicate = new Replicate({
-  auth: process.env.REPLICATE_API_TOKEN,
+// ROUTE 1 — Créer un paiement Stripe
+server.post('/create-payment-intent', async (req, res) => {
+  try {
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: 99,
+      currency: 'eur',
+    });
+    res.json({ clientSecret: paymentIntent.client_secret });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
-// ROUTE : Génération image IA avec face swap
-app.post('/api/generate', upload.single('photo'), async (req, res) => {
+// ROUTE 2 — Générer l'image IA
+server.post('/generate', upload.single('photo'), async (req, res) => {
   try {
-    const { templateEmoji } = req.body;
-    const photoBuffer = req.file.buffer;
-    const photoBase64 = `data:image/jpeg;base64,${photoBuffer.toString('base64')}`;
+    const { templateName } = req.body;
+    const photoBase64 = req.file.buffer.toString('base64');
+    const photoDataUrl = `data:${req.file.mimetype};base64,${photoBase64}`;
 
-    console.log('🎨 Génération en cours...');
-
-    // Face swap avec Replicate
     const output = await replicate.run(
-      "cdingram/face-swap:d1d6ea8c8be89d664a07a457526f7128109dee7030fdac424788d762c71ed111",
+      "tencentarc/photomaker:ddfc2b08d209f9fa8c1eca692712918bd449f695d048ec2c8f94a7e59c65e8ca",
       {
         input: {
-          target_image: photoBase64,
-          source_image: photoBase64,
+          prompt: `Professional photo of a person as ${templateName}, hyper realistic, photographic quality, 4K`,
+          input_image: photoDataUrl,
+          style_name: "Photographic (Default)",
+          num_outputs: 1,
         }
       }
     );
 
-    console.log('✅ Image générée !');
-    res.json({ success: true, imageUrl: output });
-
-  } catch (error) {
-    console.error('❌ Erreur:', error);
-    res.status(500).json({ error: error.message });
+    res.json({ imageUrl: output[0] });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 });
 
-// ROUTE : Vérification paiement Stripe
-app.post('/api/verify-payment', async (req, res) => {
-  try {
-    const { paymentMethodId } = req.body;
-    const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: 99, // 0,99€ en centimes
-      currency: 'eur',
-      payment_method: paymentMethodId,
-      confirm: true,
-      automatic_payment_methods: { enabled: true, allow_redirects: 'never' }
-    });
-
-    res.json({ success: true, paymentIntentId: paymentIntent.id });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-// Endpoint pour générer une image (à mettre ligne ~65-68)
-app.post('/api/generate', async (req, res) => {
-try {
-const prompt = req.body.prompt;
-const image = await generateImage(prompt);
-res.json({ image });
-} catch (err) {
-res.status(500).json({ error: err.message });
-}
-});
-app.listen(3000, () => console.log('Server running'));
-  console.log('🚀 FaceForge Backend démarré sur port 3000');
-});
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}/`));

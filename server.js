@@ -3,7 +3,8 @@ const cors = require('cors');
 const multer = require('multer');
 const Replicate = require('replicate');
 require('dotenv').config();
-
+// Import du générateur Replay
+const { generateImage } = require('./generator/replayGenerator');
 const app = express();
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -63,7 +64,16 @@ app.post('/api/verify-payment', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
-app.listen(3000, () => {
+// Endpoint pour générer une image (à mettre ligne ~65-68)
+app.post('/api/generate', async (req, res) => {
+try {
+const prompt = req.body.prompt;
+const image = await generateImage(prompt);
+res.json({ image });
+} catch (err) {
+res.status(500).json({ error: err.message });
+}
+});
+app.listen(3000, () => console.log('Server running'));
   console.log('🚀 FaceForge Backend démarré sur port 3000');
 });

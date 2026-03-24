@@ -1211,6 +1211,34 @@
   document.addEventListener('DOMContentLoaded', function() {
     setTimeout(initStripe, 500);
   });
-</script>
+</script>async function testIA(prompt) {
+const response = await fetch('/api/generate', {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify({ prompt })
+});
+const data = await response.json();
+console.log(data.image);
+}
+
+// Relier le bouton au test
+document.querySelector('#testButton').addEventListener('click', () => {
+testIA('Un chat jouant du piano');
+});
+<body>
+<h1>Bienvenue sur mon site IA</h1>
+
+<!-- Bouton pour tester le générateur -->
+<button id="testButton">Test IA</button>
+
+<!-- On va charger le script après le bouton -->
+<script src="app.js"></script>
 </body>
-</html>
+
+</html><!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Mon site IA</title>
+</head>
+

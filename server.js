@@ -9,7 +9,7 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 const replicate = new Replicate({ auth: process.env.REPLICATE_API_TOKEN });
 const upload = multer({ storage: multer.memoryStorage() });
 
-server.use(cors({ origin: '*' }));
+server.use(cors({ origin: '*' })); 
 server.use(express.json());
 
 // ROUTE 1 — Créer un paiement Stripe
